@@ -31,6 +31,24 @@ namespace HlCoGCPP {
         syntax.syntax.push_back("include");// Import
         syntax.syntax.push_back("return"); // Return
 
+        syntax.variable_types.push_back("int");
+        syntax.variable_types.push_back("int8_t");
+        syntax.variable_types.push_back("int16_t");
+        syntax.variable_types.push_back("int32_t");
+        syntax.variable_types.push_back("int64_t");
+
+        syntax.variable_types.push_back("uint8_t");
+        syntax.variable_types.push_back("uint16_t");
+        syntax.variable_types.push_back("uint32_t");
+        syntax.variable_types.push_back("uint64_t");
+
+        syntax.variable_types.push_back("float");
+
+        syntax.variable_types.push_back("char");
+        syntax.variable_types.push_back("short");
+        syntax.variable_types.push_back("long");
+        syntax.variable_types.push_back("string");
+
         return syntax;
     }
 

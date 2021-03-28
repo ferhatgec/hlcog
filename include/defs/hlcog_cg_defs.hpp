@@ -9,6 +9,9 @@
 
 #include <tuple>
 #include <string>
+
+#include "hlcog_cg_convert.hpp"
+
 #include "../hlcog_structure.hpp"
 #include "../hlcog_syntax_rules.hpp"
 
@@ -110,14 +113,20 @@ namespace HlCogDefs {
                 //
                 const std::string& notation_name,
                 const std::string& arguments,
-                const std::string& return_type
+                const std::string& return_type,// for user-defined types.
+                HlCoGVariableTypes type        // for built-in     types.
             ) {
         if(!std::get<3>(rules).empty()) {
             data.append(std::get<3>(rules) + " ");
         }
 
         if(!std::get<2>(rules)) {
-            data.append(return_type + " ");
+            if(!return_type.empty()) {
+                data.append(return_type + " ");
+            }
+            else {
+                data.append(HlCogConvert::Convert(language, syntax, type) + " ");
+            }
         }
 
         data.append(notation_name);
@@ -131,7 +140,12 @@ namespace HlCogDefs {
         data.append(" " + std::get<5>(rules) + " ");
 
         if(std::get<2>(rules)) {
-            data.append(return_type);
+            if (!return_type.empty()) {
+                data.append(return_type);
+            }
+            else {
+                data.append(HlCogConvert::Convert(language, syntax, type));
+            }
         }
 
         data.append(std::get<4>(rules));

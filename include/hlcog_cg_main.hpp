@@ -104,7 +104,8 @@ namespace HlCoG {
                                                     rules.SRFunctionNotation  ,
                                                     std::get<3>(data.metadata),
                                                     std::get<2>(data.metadata),
-                                                    std::get<1>(data.metadata)
+                                                    std::get<1>(data.metadata),
+                                                    data.function_return_type
                     );
 
                     break;

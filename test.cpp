@@ -29,11 +29,15 @@ int main() {
 
     cog.VariableType(HlCoGTokens::Return, meta, HlCoGPython::InitSyntax(), HlCoGPython::InitRules());
 
-    meta.metadata = std::make_tuple(HlCoGTokens::Function, "str", "idk", "my_variable");
+    meta.metadata = std::make_tuple(HlCoGTokens::Function, "", "idk", "my_variable");
+
+    // Set return type of function.
+    // C++   : basic_string class
+    // Python: str
+    meta.function_return_type = HlCoGVariableTypes::String;
 
     cog.VariableType(HlCoGTokens::Function, meta, HlCoGPython::InitSyntax(), HlCoGPython::InitRules());
 
-    // Type converter does not supported yet.
     cog.VariableType(HlCoGTokens::Function, meta, HlCoGCPP::InitSyntax(), HlCoGCPP::InitRules());
 
     std::cout << cog.GetGenerated() << '\n';

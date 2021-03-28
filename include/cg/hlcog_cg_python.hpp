@@ -30,6 +30,29 @@ namespace HlCoGPython {
         syntax.syntax.push_back("import");// Import
         syntax.syntax.push_back("return");// Return
 
+        // syntax.is_auto = true;
+
+        // I know there has a 'ctypes' library,
+        // but HLCoG does not support any automatically
+        // import system yet.
+        syntax.variable_types.push_back("int");
+        syntax.variable_types.push_back("");
+        syntax.variable_types.push_back("");
+        syntax.variable_types.push_back("");
+        syntax.variable_types.push_back("");
+
+        syntax.variable_types.push_back("");
+        syntax.variable_types.push_back("");
+        syntax.variable_types.push_back("");
+        syntax.variable_types.push_back("");
+
+        syntax.variable_types.push_back("float");
+
+        syntax.variable_types.push_back("char");
+        syntax.variable_types.push_back("");
+        syntax.variable_types.push_back("");
+        syntax.variable_types.push_back("str");
+
         return syntax;
     }
 
